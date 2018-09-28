@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>ScarlettLiu`s Blog</title>
+  <title>javascript异步 | ScarlettLiu`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ScarlettLiu`s Blog">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="js的执行环境是“单线程”–&amp;gt;一次只能完成一个任务，多个任务需要排队优点：实现简单，执行环境相对单纯；缺点：只要有一个任务耗时很长（ajax请求远程数据，IO等），后面的任务都必须排队等着，会拖延整个程序的执行，甚至造成浏览器“假死”无响应 因此，JS将任务分为两种执行模式：同步（Synchronous）和异步（Asynchronous） 所谓同步异步指的是程序的执行顺序与任务的排列顺序是否">
+<meta name="keywords" content="javascript,异步">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript异步">
+<meta property="og:url" content="http://yoursite.com/2018/09/28/javascript/异步/index.html">
 <meta property="og:site_name" content="ScarlettLiu`s Blog">
+<meta property="og:description" content="js的执行环境是“单线程”–&amp;gt;一次只能完成一个任务，多个任务需要排队优点：实现简单，执行环境相对单纯；缺点：只要有一个任务耗时很长（ajax请求远程数据，IO等），后面的任务都必须排队等着，会拖延整个程序的执行，甚至造成浏览器“假死”无响应 因此，JS将任务分为两种执行模式：同步（Synchronous）和异步（Asynchronous） 所谓同步异步指的是程序的执行顺序与任务的排列顺序是否">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-28T13:07:49.613Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="ScarlettLiu`s Blog">
+<meta name="twitter:title" content="javascript异步">
+<meta name="twitter:description" content="js的执行环境是“单线程”–&amp;gt;一次只能完成一个任务，多个任务需要排队优点：实现简单，执行环境相对单纯；缺点：只要有一个任务耗时很长（ajax请求远程数据，IO等），后面的任务都必须排队等着，会拖延整个程序的执行，甚至造成浏览器“假死”无响应 因此，JS将任务分为两种执行模式：同步（Synchronous）和异步（Asynchronous） 所谓同步异步指的是程序的执行顺序与任务的排列顺序是否">
   
     <link rel="alternative" href="/atom.xml" title="ScarlettLiu`s Blog" type="application/atom+xml">
   
@@ -134,90 +139,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-秋招面试总结" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-javascript/异步" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/28/秋招面试总结/">秋招面试总结</a>
-    </h1>
-  
-
-        
-        <a href="/2018/09/28/秋招面试总结/" class="archive-article-date">
-  	<time datetime="2018-09-28T13:00:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="HTML"><a href="#HTML" class="headerlink" title="HTML"></a>HTML</h3><p>1.h5新增元素<br>2.canvas对前端页面的性能优化<br>3.写UI组件<br>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/28/秋招面试总结/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-javascript/异步" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/09/28/javascript/异步/">javascript异步</a>
+    <h1 class="article-title" itemprop="name">
+      javascript异步
     </h1>
   
 
@@ -232,8 +161,43 @@
       
         <p>js的执行环境是“单线程”–&gt;一次只能完成一个任务，多个任务需要排队<br>优点：实现简单，执行环境相对单纯；<br>缺点：只要有一个任务耗时很长（ajax请求远程数据，IO等），后面的任务都必须排队等着，会拖延整个程序的执行，甚至造成浏览器“假死”无响应</p>
 <p>因此，JS将任务分为两种执行模式：同步（Synchronous）和异步（Asynchronous）</p>
-<p>所谓同步异步指的是程序的执行顺序与任务的排列顺序是否一致！<br>
-        
+<p>所谓同步异步指的是程序的执行顺序与任务的排列顺序是否一致！<br><a id="more"></a></p>
+<h2 id="一、回调函数"><a href="#一、回调函数" class="headerlink" title="一、回调函数"></a>一、回调函数</h2><p>回调是一个函数被作为一个参数传递到另一个函数里，在那个函数执行完后再执行。<br>假定有两个函数f1和f2，后者等待前者的执行结果。<br>如果f1是一个很耗时的任务，可以考虑改写f1，把f2写成f1的回调函数。</p>
+<h4 id="优点：简单、容易理解和部署"><a href="#优点：简单、容易理解和部署" class="headerlink" title="优点：简单、容易理解和部署"></a>优点：简单、容易理解和部署</h4><h4 id="缺点：不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程会很混乱，而且每个任务只能指定一个回调函数。"><a href="#缺点：不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程会很混乱，而且每个任务只能指定一个回调函数。" class="headerlink" title="缺点：不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程会很混乱，而且每个任务只能指定一个回调函数。"></a>缺点：不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程会很混乱，而且每个任务只能指定一个回调函数。</h4><blockquote>
+<p>注：回调不一定异步，之间没有直接关系</p>
+</blockquote>
+<h2 id="二、事件监听"><a href="#二、事件监听" class="headerlink" title="二、事件监听"></a>二、事件监听</h2><p>任务的执行不取决代码的顺序，而取决于某一个事件是否发生。</p>
+<p>监听函数有：on，bind，listen，addEventListener，observe</p>
+<h4 id="优点：容易理解，可以绑定多个事件，每一个事件可以指定多个回调函数，而且可以去耦合，有利于实现模块化。"><a href="#优点：容易理解，可以绑定多个事件，每一个事件可以指定多个回调函数，而且可以去耦合，有利于实现模块化。" class="headerlink" title="优点：容易理解，可以绑定多个事件，每一个事件可以指定多个回调函数，而且可以去耦合，有利于实现模块化。"></a>优点：容易理解，可以绑定多个事件，每一个事件可以指定多个回调函数，而且可以去耦合，有利于实现模块化。</h4><h4 id="缺点：整个程序都要变成事件驱动型，运行流程会变得不清晰。"><a href="#缺点：整个程序都要变成事件驱动型，运行流程会变得不清晰。" class="headerlink" title="缺点：整个程序都要变成事件驱动型，运行流程会变得不清晰。"></a>缺点：整个程序都要变成事件驱动型，运行流程会变得不清晰。</h4><p>如：onclick–&gt;<br>优点：写法兼容到主流浏览器<br>缺点：当同一个element元素绑定多个事件时，只有最后一个事件会被添加<br>attachEvent和addEvenListener方法</p>
+<h2 id="三、发布-订阅-观察者模式"><a href="#三、发布-订阅-观察者模式" class="headerlink" title="三、发布/订阅(观察者模式)"></a>三、发布/订阅(观察者模式)</h2><p>某个任务执行完成，就向信号中心”发布”（publish）一个信号，其他任务可以向信号中心”订阅”（subscribe）这个信号，从而知道什么时候自己可以开始执行。<br>订阅：jQuery.subscribe(“done”, f2);<br>发布：jQuery.publish(“done”);</p>
+<h2 id="四、promise对象"><a href="#四、promise对象" class="headerlink" title="四、promise对象"></a>四、promise对象</h2><p>promise为了解决回调地狱，不是新的语法功能，而是一种新的写法，允许将回调函数的横向加载，改成纵向加载<br>每一个异步任务返回一个promise对象，该对象有一个then方法，允许指定回调函数<br>Promise:一个用于传递异步操作的消息的对象，为异步编程提供统一接口<br>特点：1.对象的状态不受外界影响；<br>2.一旦状态改变就不会再变，状态凝固；与事件不同，事件的状态错过后再监听无结果。</p>
+<p>优点：将异步的流程以同步的方式表现，避免了层层嵌套的回调函数，流程清楚，可以注册任意数量的函数在成功或者失败后运行，也可以在任何时候注册事件处理程序。<br>缺点：代码冗余，极端情况下多个then</p>
+<h4 id="协程："><a href="#协程：" class="headerlink" title="协程："></a>协程：</h4><p>多个线程互相协作，完成异步任务（协程A就是异步任务）</p>
+<pre><code>第一步，协程A开始执行。
+
+第二步，协程A执行到一半，进入暂停，执行权转移到协程B。
+
+第三步，（一段时间后）协程B交还执行权。
+
+第四步，协程A恢复执行。
+</code></pre><p>yield命令是异步两个阶段的分界线。<br>协程遇到 yield 命令就暂停，等到执行权返回，再从暂停的地方继续往后执行。它的最大优点，就是代码的写法非常像同步操作，如果去除yield命令，简直一模一样。  </p>
+<p>以下为ES6的异步解决方案</p>
+<h2 id="五、Generator"><a href="#五、Generator" class="headerlink" title="五、Generator"></a>五、Generator</h2><p>Generator 函数是协程在 ES6 的实现，最大特点就是可以交出函数的执行权（即暂停执行）  </p>
+<h4 id="形式：1-函数名前加-以示区别；2-yield-需要暂停的地方"><a href="#形式：1-函数名前加-以示区别；2-yield-需要暂停的地方" class="headerlink" title="形式：1.函数名前加*,以示区别；2.yield:需要暂停的地方"></a>形式：1.函数名前加*,以示区别；2.yield:需要暂停的地方</h4><h4 id="返回值："><a href="#返回值：" class="headerlink" title="返回值："></a>返回值：</h4><p>调用 Generator 函数，会返回一个<strong>内部指针</strong>（即遍历器 ）调用指针的 next 方法，会移动内部指针（即执行异步任务的第一段）</p>
+<p>换言之，next 方法的作用是分阶段执行 Generator 函数。每次调用 next 方法，会返回一个对象，表示当前阶段的信息（ value 属性和 done 属性）。value 属性是 yield 语句后面表达式的值，表示当前阶段的值；done 属性是一个布尔值，表示 Generator 函数是否执行完毕，即是否还有下一个阶段。</p>
+<h4 id="特性："><a href="#特性：" class="headerlink" title="特性："></a>特性：</h4><p>函数体内外的数据交换和错误处理机制<br>1.next 方法返回值的 value 属性，是 Generator 函数向外输出数据；next 方法还可以接受参数，这是向 Generator 函数体内输入数据。<br>2.try{}catch(){}Generator 函数内部还可以部署错误处理代码，捕获函数体外抛出的错误。出错的代码与处理错误的代码，实现了时间和空间上的分离</p>
+<h2 id="六、优雅的async-await"><a href="#六、优雅的async-await" class="headerlink" title="六、优雅的async/await"></a>六、优雅的async/await</h2><h4 id="async-函数就是-Generator-函数的语法糖"><a href="#async-函数就是-Generator-函数的语法糖" class="headerlink" title="async 函数就是 Generator 函数的语法糖"></a>async 函数就是 Generator 函数的语法糖</h4><p>async 函数就是将 Generator 函数的星号（*）替换成 async，将 yield 替换成 await  </p>
+<h4 id="形式："><a href="#形式：" class="headerlink" title="形式："></a>形式：</h4><p>async作为一个关键字放到函数前面，表示函数是一个异步函数</p>
+<blockquote>
+<p>注：await 关键字只能放到async 函数里面</p>
+</blockquote>
+<h4 id="优点："><a href="#优点：" class="headerlink" title="优点："></a>优点：</h4><p>1.<strong>更好的语义</strong>async 和 await，比起星号和 yield，语义更清楚了。async 表示函数里有异步操作，await 表示紧跟在后面的表达式需要等待结果。<br>2.<strong>内置执行器</strong> Generator 函数的执行必须靠执行器，所以才有了 co 函数库，而 async 函数自带执行器。也就是说，async 函数的执行，与普通函数一模一样，只要一行。<br>3.<strong>更广的适用性</strong>co 函数库约定，yield 命令后面只能是 Thunk 函数或 Promise 对象，而 async 函数的 await 命令后面，可以跟 Promise 对象和原始类型的值（数值、字符串和布尔值，但这时等同于同步操作）。</p>
+<h2 id="附："><a href="#附：" class="headerlink" title="附："></a>附：</h2><ol>
+<li>defer 属性   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;file.js&quot; defer&gt;&lt;/script&gt;</span><br><span class="line">```  </span><br><span class="line">defer属性声明这个脚本中将不会有 document.write 或 dom 修改。</span><br><span class="line">浏览器将会并行下载 file.js 和其它有 defer 属性的script，而不会阻塞页面后续处理。</span><br><span class="line">&gt; 注：所有的defer 脚本保证是按顺序依次执行的。</span><br><span class="line"></span><br><span class="line">2. async 属性</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p><script src="file.js" async></script><br><code>`</code><br>async属性是HTML5新增的。作用和defer类似，但是它将在下载后尽快执行，不能保证脚本会按顺序执行。它们将在onload 事件之前完成。</p>
+
       
 
       
@@ -259,16 +223,79 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/09/28/javascript/异步/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/28/javascript/异步/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/09/28/秋招面试总结/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          秋招面试总结
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -288,8 +315,14 @@
 
 
 
+  
+  
+  
 
   
+
+  
+
   
 
 
@@ -312,8 +345,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
