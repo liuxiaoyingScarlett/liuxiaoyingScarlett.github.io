@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 面试 | ScarlettLiu`s Blog</title>
+  <title>ScarlettLiu`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="app.json不仅用于配置，而且每个页面都必须在此配置（快捷方式创建页面）。app.json中哪个页面在上面就是先加载哪个页面   第二章跳转携带参数与详情页1.模板只是把布局和样式封装，而当前模板的业务逻辑并不存在，因此与组件不同。   2.template不能绑定事件 ==&amp;gt; 曲线救国，将template包在一个view中，给view绑定事件。   3.尽量使用flex布局处理横向和纵">
+<meta property="og:type" content="article">
 <meta property="og:title" content="ScarlettLiu`s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/面试/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/11/14/小程序/index.html">
 <meta property="og:site_name" content="ScarlettLiu`s Blog">
+<meta property="og:description" content="app.json不仅用于配置，而且每个页面都必须在此配置（快捷方式创建页面）。app.json中哪个页面在上面就是先加载哪个页面   第二章跳转携带参数与详情页1.模板只是把布局和样式封装，而当前模板的业务逻辑并不存在，因此与组件不同。   2.template不能绑定事件 ==&amp;gt; 曲线救国，将template包在一个view中，给view绑定事件。   3.尽量使用flex布局处理横向和纵">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-11-23T12:24:08.417Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="ScarlettLiu`s Blog">
+<meta name="twitter:description" content="app.json不仅用于配置，而且每个页面都必须在此配置（快捷方式创建页面）。app.json中哪个页面在上面就是先加载哪个页面   第二章跳转携带参数与详情页1.模板只是把布局和样式封装，而当前模板的业务逻辑并不存在，因此与组件不同。   2.template不能绑定事件 ==&amp;gt; 曲线救国，将template包在一个view中，给view绑定事件。   3.尽量使用flex布局处理横向和纵">
   
     <link rel="alternative" href="/atom.xml" title="ScarlettLiu`s Blog" type="application/atom+xml">
   
@@ -132,71 +136,149 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-小程序" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>app.json不仅用于配置，而且每个页面都必须在此配置（快捷方式创建页面）。<br>app.json中哪个页面在上面就是先加载哪个页面  </p>
+<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h4 id="跳转携带参数与详情页"><a href="#跳转携带参数与详情页" class="headerlink" title="跳转携带参数与详情页"></a>跳转携带参数与详情页</h4><p>1.模板只是把<strong>布局和样式</strong>封装，而当前模板的业务逻辑并不存在，因此与组件不同。  </p>
+<p>2.template不能绑定事件 ==&gt; 曲线救国，将template包在一个view中，给view绑定事件。  </p>
+<p>3.尽量使用flex布局处理横向和纵向布局，避免使用浮动。设置为伸缩盒模型默认是水平布局。  </p>
+<p>4.抽取初始化和公共的样式内容放在app.wxss文件中  </p>
+<p>5.重复使用的数据注意尽量避免使用本地相对路径，而是使用网络数据的绝对路径。</p>
+<p>出错原因：<br>1.图片资源的相对路径的使用以及后缀名，文件名的手误<br>2.对px,rpx,rem等单位的估算不合理<br>3.flex布局以及vertical-align,align-items,justify-content区别失效！！！<br>4.工具的3个图标置于右侧对齐无效？</p>
+<h4 id="本地存储与提示框"><a href="#本地存储与提示框" class="headerlink" title="本地存储与提示框"></a>本地存储与提示框</h4><p>1.数据(由后台)从服务器获取，使用本地存储模拟。localStorage与sessionStorage的生命周期！  </p>
+<p>2.使用闭包在详情页中collectTap事件中读取当前数据的id？？  </p>
+<p>3.注意catchTap与bindTap的区别与使用场景，冒泡与非冒泡，，target与currentTarget</p>
+<p>4.收藏的逻辑及本地存储自己调试！</p>
+<p>5.定义域获取自定义数据 data-<em> = ;event.currentTarget.dataset.</em></p>
+<p>6.showToast与showModal，showActionSheet的区别</p>
+<p>出错原因：<br>1.wx:if与hidden,这里用为什么无效？？？？  </p>
+<h4 id="音频播放与tabbar"><a href="#音频播放与tabbar" class="headerlink" title="音频播放与tabbar"></a>音频播放与tabbar</h4><p>1.showToast与showModal，showActionSheet<br>2.转发分享？？？？<br>3.不能使用navigatorTo跳转到tabBar页面，改用switchTab.redirectTo与navigatorTo的区别在于会关闭之前页面，没有返回按钮<br>4.音频播放API更改？？？播放失败？？？</p>
+<p>5.tabbar接口更新了？？？？ </p>
+<h2 id="复盘知识点："><a href="#复盘知识点：" class="headerlink" title="复盘知识点："></a>复盘知识点：</h2><p>1.flex布局??<br>2.rem(相对根字体大小),px,em（相对于父元素的字体大小）,rpx<br>rpx（responsive pixel）: 可以根据屏幕宽度进行自适应。<br><strong>规定屏幕宽为750rpx</strong>。如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px = 750物理像素，1rpx = 0.5px = 1物理像素。<br>3.相对路径的表示含义(DOS命令 &amp; <strong>vim操作命令？?</strong>)<br>“../”表示<strong>上一级目录</strong>开始<br>“./”表示<strong>当前同级目录</strong>开始，通常省略<br>“/”表示<strong>根目录</strong>开始。</p>
+<h2 id="网络请求-amp-模板嵌套-amp-视图适配"><a href="#网络请求-amp-模板嵌套-amp-视图适配" class="headerlink" title="网络请求 &amp; 模板嵌套 &amp; 视图适配"></a>网络请求 &amp; 模板嵌套 &amp; 视图适配</h2><p>1.这里有个坑：请求头的content-type设置为application/xml!否则报错？why?<br>2.不要在网络请求中对视图做操作，应该声明一个回调函数来完成这件事情。函数参数最好不要太长以及拼接。<br>3.作为开发者每个人必须存在一个VPN？代理？此话怎讲？Green网络加速器  </p>
+<p>4.for循环，for..in,forEach<br>5.subString,subStr,sub????区别<br>6.用block实现循环<br>7….运算符</p>
+<h2 id="功能实现："><a href="#功能实现：" class="headerlink" title="功能实现："></a>功能实现：</h2><p>1.转发分享<br>2.音乐播放<br>3.tabbar切换  完成（瑕疵：切换时的图片显示）<br>4.模板嵌套  实现（瑕疵：更多无法右对齐）<br>5.网络请求与数据适配  </p>
+<h4 id="出错原因"><a href="#出错原因" class="headerlink" title="出错原因"></a>出错原因</h4><p>1.引入模板时在wxml中import标签自闭合，template标签闭合。引入wxss时需要加分号语法。<br>2.模板嵌套时必须将wxml和wxss都连环嵌套，一环丢失则无效。<br>3.模板中最外层放个view容器，便于写样式 </p>
+<h2 id="第三章-刷新与适配"><a href="#第三章-刷新与适配" class="headerlink" title="第三章 刷新与适配"></a>第三章 刷新与适配</h2><p>1.函数单元越小越好！业务逻辑清晰！方便调用！注意命名的规范！<br>2.模块化导出导入<br>3.</p>
+<pre><code>&lt;block wx:for=&quot;{{}}&quot; wx:for-item=&quot;item&quot; wx:key=&quot;key&quot;&gt;  
+&lt;image src= &quot;{{ ** ? '' : '' }}&quot;&gt;&lt;/image&gt;
+&lt;/block&gt;  
+</code></pre><p>4.动态设置导航条标题？onload与onready生命周期？空格字符串替换初始导航条标题？而不能是空字符串<br>5.模板没有业务逻辑，js写在其父的js文件中。<br>6.子页面的json文件本身就是当前的window  </p>
+<p>7.restful请求形式？有状态？减少服务器压力？从url中读取工作任务？<br>8.修改字符串的长度截取字符串？？？？<br>9.image的mode属性<br>10.scroll-view可拉动<br>11.直接修改this.data无效，无法改变页面的状态<br>12.搜索页面部分不是很清楚<br>13.强迫自己看文档！！  </p>
+<h2 id="第五章-微信JSSDK"><a href="#第五章-微信JSSDK" class="headerlink" title="第五章.微信JSSDK"></a>第五章.微信JSSDK</h2><p>php?<br>JSSDK?  </p>
+<h2 id="IDE通用快捷键"><a href="#IDE通用快捷键" class="headerlink" title="IDE通用快捷键"></a>IDE通用快捷键</h2><h2 id="typescript"><a href="#typescript" class="headerlink" title="typescript???"></a>typescript???</h2><p>button,checkbox,input,picker</p>
+<h2 id="代码风格学习"><a href="#代码风格学习" class="headerlink" title="代码风格学习"></a>代码风格学习</h2><p>1,wxml中尽量用变量代替文本及属性值  </p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/09/28/秋招面试总结/" class="archive-article-date">
-  	<time datetime="2018-09-28T13:00:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-28</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/09/28/秋招面试总结/">秋招面试总结</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/11/14/小程序/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/面试//" class="article-tag-list-link color3">面试</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2018/10/31/git/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
 
 
           </div>
@@ -219,9 +301,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
