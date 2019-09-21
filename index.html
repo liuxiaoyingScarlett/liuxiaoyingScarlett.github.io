@@ -134,41 +134,56 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-小程序" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-javascript/数组交集并集差集" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/30/javascript/数组交集并集差集/">js求数组交集并集差集</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/30/javascript/数组交集并集差集/" class="archive-article-date">
+  	<time datetime="2019-08-29T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-30</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>app.json不仅用于配置，而且每个页面都必须在此配置（快捷方式创建页面）。<br>app.json中哪个页面在上面就是先加载哪个页面  </p>
-<h2 id="第二章"><a href="#第二章" class="headerlink" title="第二章"></a>第二章</h2><h4 id="跳转携带参数与详情页"><a href="#跳转携带参数与详情页" class="headerlink" title="跳转携带参数与详情页"></a>跳转携带参数与详情页</h4><p>1.模板只是把<strong>布局和样式</strong>封装，而当前模板的业务逻辑并不存在，因此与组件不同。  </p>
-<p>2.template不能绑定事件 ==&gt; 曲线救国，将template包在一个view中，给view绑定事件。  </p>
-<p>3.尽量使用flex布局处理横向和纵向布局，避免使用浮动。设置为伸缩盒模型默认是水平布局。  </p>
-<p>4.抽取初始化和公共的样式内容放在app.wxss文件中  </p>
-<p>5.重复使用的数据注意尽量避免使用本地相对路径，而是使用网络数据的绝对路径。</p>
-<p>出错原因：<br>1.图片资源的相对路径的使用以及后缀名，文件名的手误<br>2.对px,rpx,rem等单位的估算不合理<br>3.flex布局以及vertical-align,align-items,justify-content区别失效！！！<br>4.工具的3个图标置于右侧对齐无效？</p>
-<h4 id="本地存储与提示框"><a href="#本地存储与提示框" class="headerlink" title="本地存储与提示框"></a>本地存储与提示框</h4><p>1.数据(由后台)从服务器获取，使用本地存储模拟。localStorage与sessionStorage的生命周期！  </p>
-<p>2.使用闭包在详情页中collectTap事件中读取当前数据的id？？  </p>
-<p>3.注意catchTap与bindTap的区别与使用场景，冒泡与非冒泡，，target与currentTarget</p>
-<p>4.收藏的逻辑及本地存储自己调试！</p>
-<p>5.定义域获取自定义数据 data-<em> = ;event.currentTarget.dataset.</em></p>
-<p>6.showToast与showModal，showActionSheet的区别</p>
-<p>出错原因：<br>1.wx:if与hidden,这里用为什么无效？？？？  </p>
-<h4 id="音频播放与tabbar"><a href="#音频播放与tabbar" class="headerlink" title="音频播放与tabbar"></a>音频播放与tabbar</h4><p>1.showToast与showModal，showActionSheet<br>2.转发分享？？？？<br>3.不能使用navigatorTo跳转到tabBar页面，改用switchTab.redirectTo与navigatorTo的区别在于会关闭之前页面，没有返回按钮<br>4.音频播放API更改？？？播放失败？？？</p>
-<p>5.tabbar接口更新了？？？？ </p>
-<h2 id="复盘知识点："><a href="#复盘知识点：" class="headerlink" title="复盘知识点："></a>复盘知识点：</h2><p>1.flex布局??<br>2.rem(相对根字体大小),px,em（相对于父元素的字体大小）,rpx<br>rpx（responsive pixel）: 可以根据屏幕宽度进行自适应。<br><strong>规定屏幕宽为750rpx</strong>。如在 iPhone6 上，屏幕宽度为375px，共有750个物理像素，则750rpx = 375px = 750物理像素，1rpx = 0.5px = 1物理像素。<br>3.相对路径的表示含义(DOS命令 &amp; <strong>vim操作命令？?</strong>)<br>“../”表示<strong>上一级目录</strong>开始<br>“./”表示<strong>当前同级目录</strong>开始，通常省略<br>“/”表示<strong>根目录</strong>开始。</p>
-<h2 id="网络请求-amp-模板嵌套-amp-视图适配"><a href="#网络请求-amp-模板嵌套-amp-视图适配" class="headerlink" title="网络请求 &amp; 模板嵌套 &amp; 视图适配"></a>网络请求 &amp; 模板嵌套 &amp; 视图适配</h2><p>1.这里有个坑：请求头的content-type设置为application/xml!否则报错？why?<br>2.不要在网络请求中对视图做操作，应该声明一个回调函数来完成这件事情。函数参数最好不要太长以及拼接。<br>3.作为开发者每个人必须存在一个VPN？代理？此话怎讲？Green网络加速器  </p>
-<p>4.for循环，for..in,forEach<br>5.subString,subStr,sub????区别<br>6.用block实现循环<br>7….运算符</p>
-<h2 id="功能实现："><a href="#功能实现：" class="headerlink" title="功能实现："></a>功能实现：</h2><p>1.转发分享<br>2.音乐播放<br>3.tabbar切换  完成（瑕疵：切换时的图片显示）<br>4.模板嵌套  实现（瑕疵：更多无法右对齐）<br>5.网络请求与数据适配  </p>
-<h4 id="出错原因"><a href="#出错原因" class="headerlink" title="出错原因"></a>出错原因</h4><p>1.引入模板时在wxml中import标签自闭合，template标签闭合。引入wxss时需要加分号语法。<br>2.模板嵌套时必须将wxml和wxss都连环嵌套，一环丢失则无效。<br>3.模板中最外层放个view容器，便于写样式 </p>
-<h2 id="第三章-刷新与适配"><a href="#第三章-刷新与适配" class="headerlink" title="第三章 刷新与适配"></a>第三章 刷新与适配</h2><p>1.函数单元越小越好！业务逻辑清晰！方便调用！注意命名的规范！<br>2.模块化导出导入<br>3.</p>
-<pre><code>&lt;block wx:for=&quot;{{}}&quot; wx:for-item=&quot;item&quot; wx:key=&quot;key&quot;&gt;  
-&lt;image src= &quot;{{ ** ? '' : '' }}&quot;&gt;&lt;/image&gt;
-&lt;/block&gt;  
-</code></pre><p>4.动态设置导航条标题？onload与onready生命周期？空格字符串替换初始导航条标题？而不能是空字符串<br>5.模板没有业务逻辑，js写在其父的js文件中。<br>6.子页面的json文件本身就是当前的window  </p>
-<p>7.restful请求形式？有状态？减少服务器压力？从url中读取工作任务？<br>8.修改字符串的长度截取字符串？？？？<br>9.image的mode属性<br>10.scroll-view可拉动<br>11.直接修改this.data无效，无法改变页面的状态<br>12.搜索页面部分不是很清楚<br>13.强迫自己看文档！！  </p>
-<h2 id="第五章-微信JSSDK"><a href="#第五章-微信JSSDK" class="headerlink" title="第五章.微信JSSDK"></a>第五章.微信JSSDK</h2><p>php?<br>JSSDK?  </p>
-<h2 id="IDE通用快捷键"><a href="#IDE通用快捷键" class="headerlink" title="IDE通用快捷键"></a>IDE通用快捷键</h2><h2 id="typescript"><a href="#typescript" class="headerlink" title="typescript???"></a>typescript???</h2><p>button,checkbox,input,picker</p>
-<h2 id="代码风格学习"><a href="#代码风格学习" class="headerlink" title="代码风格学习"></a>代码风格学习</h2><p>1,wxml中尽量用变量代替文本及属性值  </p>
+        <h2 id="业务场景"><a href="#业务场景" class="headerlink" title="业务场景"></a>业务场景</h2><p>根据用户选择内容(array)与接口返回内容(string)做比较,使用array.includes(string)即可。后端根据业务场景修改返回数据类型为array。<strong>本质是数组取交集</strong></p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
+<li><code>arr1.filter(item =&gt; arr2.includes(item))</code></li>
+</ul>
+<h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><ul>
+<li>数组取并集<br>  <code>arr1.concat(arr2.filter(item =&gt; !arr1.includes(item) ))</code></li>
+<li>数组取差集<br>  <code>arr1.concat(arr2).filter(item=&gt; !(arr1.includes(item) &amp;&amp; arr2.includes(item))</code></li>
+</ul>
+<blockquote>
+<p>注：ES6使用filter + set + Array.form实现；ES5使用filter + indexOf实现。以下</p>
+</blockquote>
+<pre><code>// ES6
+let aSet = new Set(a)
+let bSet = new Set(b)
+// 并集
+let union = Array.from(new Set(a.concat(b))) 
+// 交集
+let intersection = Array.from(new Set(a.filter(v =&gt; bSet.has(v))))
+// 差集
+let difference = Array.from(new Set(a.concat(b).filter(v =&gt; !aSet.has(v) || !bSet.has(v))))
+
+// ES5
+// 并集
+var union = a.concat(b.filter(function(v) {
+return a.indexOf(v) === -1}))
+// 交集
+var intersection = a.filter(function(v){ return b.indexOf(v) &gt; -1 })
+// 差集
+var difference = a.filter(function(v){ return b.indexOf(v) === -1 }).concat(b.filter(function(v){ return a.indexOf(v) === -1 }))
+</code></pre><p><a href="https://excaliburhan.com/post/js-set-operation.html" target="_blank" rel="noopener">参考链接</a></p>
 
       
 
@@ -177,11 +192,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">javascript</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">array</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/javascript//" class="article-tag-list-link color1">javascript</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/11/14/小程序/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/30/javascript/数组交集并集差集/">展开全文 >></a>
         </p>
       
 
@@ -211,60 +252,102 @@
 
 
   
-    <article id="post-git" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Keep/angular项目接入lint" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/20/Keep/angular项目接入lint/">angular项目接入lint</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/20/Keep/angular项目接入lint/" class="archive-article-date">
+  	<time datetime="2019-08-19T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-20</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="集中式VS分布式"><a href="#集中式VS分布式" class="headerlink" title="集中式VS分布式"></a>集中式VS分布式</h2><p>版本库是集中存放在中央服务器的，更改前取得最新，更改后推送到远程<br>缺点：必须联网才能工作(局域网或互联网)；单点故障</p>
-<p>分布式版本控制系统没有“中央服务器”，每个人的电脑上都是一个完整的版本库，因此无需联网。服务器的作用仅仅是用来方便“交换”大家的修改</p>
+        <h2 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h2><p>负责的angular项目接入lint。当前项目线上使用时长超过一年，代码接入lint不能全量接入，试了一下，整个项目内lint报错较多，需要增量接入，否则上线后可能会存在潜在风险。</p>
+<ul>
+<li><a href="https://github.com/AlloyTeam/eslint-config-alloy" target="_blank" rel="noopener">eslint-config-alloy</a></li>
+</ul>
+<ul>
+<li><a href="https://www.npmjs.com/package/tslint-config-standard" target="_blank" rel="noopener">tslint-config-standard</a></li>
+</ul>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
+<li>eslint + prettier + lint-staged + husky<ul>
+<li>eslint检查代码</li>
+<li>prettier格式化代码(<code>eslint --fix</code>的加强版)</li>
+<li>lint-staged只针对暂存区的文件执行lint</li>
+<li>husky提供git的生命周期钩子函数(使用<code>pre-commit</code>)<h2 id="实际"><a href="#实际" class="headerlink" title="实际"></a>实际</h2></li>
+</ul>
+</li>
+<li>安装依赖<ul>
+<li><code>npm install eslint --save-dev</code></li>
+<li><code>npm install typescript typescript-eslint-parser --save-dev</code>用来替换默认解析器，识别ts语法</li>
+<li><code>npm install eslint-plugin-typescript --save-dev</code></li>
+<li><code>npm install tslint-config-standard --save-dev</code></li>
+<li><code>npm install husky --save-dev</code>git hook</li>
+<li><code>npm install prettier lint-staged</code></li>
+</ul>
+</li>
+<li>创建tslint.json配置文件,指定检测规则  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  &quot;extends&quot;: [</span><br><span class="line">    &quot;tslint-config-standard&quot;</span><br><span class="line">  ],</span><br><span class="line">  &quot;rules&quot;: &#123;</span><br><span class="line">    // 后续根据项目再做修改</span><br><span class="line">    &quot;handle-callback-err&quot;: false,</span><br><span class="line">    &quot;no-empty&quot;: false,</span><br><span class="line">    &quot;one-variable-per-declaration&quot;: false,</span><br><span class="line">    &quot;radix&quot;: false</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <blockquote>
-<p>注：版本控制系统只能跟踪文本文件的具体变化，不能跟踪二进制文件(如图片，视频，Microsoft Word)<br>注：在Git中，用HEAD表示当前版本，也就是最新的提交，上一个版本就是HEAD^，上上一个版本就是HEAD^^，或者写成HEAD~2</p>
+<p>非ts项目配置文件为.eslintrc.js 或 .eslintrc.json。由于执行lint时会在当前文件下找配置文件，逐级向上，将所有规则合并，文件路径一般放在项目根目录下或者源代码根目录下。<br>Q：配置文件产生冲突以哪个为准？  </p>
 </blockquote>
-<p>Git的版本回退速度非常快，因为Git在内部有个指向当前版本的HEAD指针，当回退版本的时候，Git仅仅是把改变HEAD指向并更新工作区。</p>
-<p>Git的版本库中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支master，以及指向master的一个指针叫HEAD。</p>
-<p>Git跟踪并管理的是修改，而非文件。</p>
-<h2 id="名词"><a href="#名词" class="headerlink" title="名词"></a>名词</h2><p>工作区：本地中可见的目录<br>版本库：隐藏目录.git                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv</p>
-<p>git常用命令<br>pwd 查看当前目录的路径<br>ls 查看当前目录的一级目录内容<br>ls -ah 显示隐藏的.git目录<br>mkdir 创建空目录<br>cat 文件名  显示文件内容<br>touch newfile.txt 新建文件<br>git config –local(或–globel) user.name ‘***’<br>git config –local(或–globel) user.email <a href="mailto:&#39;you@example.com" target="_blank" rel="noopener">&#39;you@example.com</a>‘<br>配置用户名和邮箱，用于多人协作时明确提交人<br>git init 初始化git版本库，创建.git文件夹，用于保存git相关文件及其版本<br>git status查看当前git状态<br>git add .  将当前目录下所有文件(未追踪的或经过修改，删除的)添加到暂存区(提交列表)<br>git add 文件名 只添加指定文件到暂存区<br>git checkout – filename 撤销工作区中的修改(也可以用git checkout filename)<br>git reset HEAD <file>可以把暂存区的修改撤销掉（unstage），重新放回工作区<br>git commit -m ‘第一次提交’ 将暂存区的提交列表提交到版本库，并填写版本说明，以便以后回滚。<br>git log，查看提交记录，使用–pretty=oneline 简化输出只有commitID和message<br>git reset –hard commitID 回滚到指定版本<br>git reflog 查看所有分支的所有操作记录（包括已经被删除的 commit 记录和 reset 的操作）</file></p>
-<p>例如执行 git reset –hard HEAD~1，退回到上一个版本，用git log则是看不出来被删除的commitid，用git reflog则可以看到被删除的commitid，我们就可以买后悔药，恢复到被删除的那个版本</p>
-<p>git stash             将当前工作区所有修改过的内容存储到“某个地方”，将工作区还原到当前版本未修改过的状态<br>git stash list        查看“某个地方”存储的所有记录<br>git stash clear     清空“某个地方”<br>git stash pop       将第一个记录从“某个地方”重新拿到工作区（可能有冲突）读且删<br>git stash apply     编号, 将指定编号记录从“某个地方”重新拿到工作区（可能有冲突）只读不删<br>git stash drop      编号，删除指定编号的记录  只删不读</p>
-<p>branch相关常用命令：</p>
-<p>git branch 分支名称             创建分支<br>git checkout 分支名称          切换分支<br>git branch -m 分支名称        创建并切换到指定分支<br>git branch                          查看所有分支<br>git branch -d 分支名称         删除分支<br>git merge 分支名称              将指定分支合并到当前分支</p>
-<p>git merge 时也可能会出现冲突，解决冲突的方式上述stash相同，即：找到冲突文件，手动修改冲突并提交</p>
-<p>vim</p>
+<ul>
+<li><p>prettier配置文件<br>  .prettierrc 或 prettier.config.js 或 package.json 中配置prettier属性  </p>
+<pre><code>module.exports = {
+  printWidth: 80, //一行的字符数，如果超过会进行换行，默认为80
+  tabWidth: 2, //一个tab代表几个空格数，默认为2
+  singleQuote: true, //字符串是否使用单引号，默认为false，使用双引号
+  semi: false, //行尾是否使用分号，默认为true
+  trailingComma: &apos;none&apos;, //是否使用尾逗号，有三个可选值&quot;&lt;none|es5|all&gt;&quot;
+  bracketSpacing: true, //对象大括号直接是否有空格，默认为true，效果：{ foo: bar }
+  //  注意，当前为angular项目，并没有指定解析器
+}
+</code></pre></li>
+<li><p>package.json </p>
 <blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<blockquote>
-<p>================= &lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;</p>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
-</blockquote>
+<pre><code>&quot;husky&quot;: {
+     &quot;hooks&quot;: {
+       &quot;pre-commit&quot;: &quot;lint-staged&quot;
+     }
+  },
+  &quot;lint-staged&quot;: {
+     // 按需修改检测文件路径
+     &quot;src/**/*.ts&quot;: [
+     &quot;tslint --fix&quot;
+    ],
+    &quot;src/**/*.{html,less,ts}&quot;: [
+      &quot;prettier --write&quot;,
+      &quot;git add&quot;
+    ]
+}
+</code></pre></blockquote>
+</li>
+<li><p>TSLint注释标记(<em>不建议使用</em>)<br>  ts文件中使用以下注释来临时忽略规则出现的错误</p>
+<ul>
+<li>/<em> tslint:disable </em>/——忽略该行以下所有代码出现的错误提示</li>
+<li>/<em> tslint:enable </em>/——当前ts文件重新启用tslint</li>
+<li>// tslint:disable-line——忽略当前行代码出现的错误提示</li>
+<li>// tslint:disable-next-line——忽略下一行代码出现的错误提示</li>
+</ul>
+</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://www.godblessyuan.com/2018/06/更新版-梳理前端开发使用eslint和prettier来检查和格式化代码问题.html" target="_blank" rel="noopener">https://www.godblessyuan.com/2018/06/更新版-梳理前端开发使用eslint和prettier来检查和格式化代码问题.html</a></li>
+<li><a href="https://dsb123dsb.github.io/2018/05/26/lint-staged和husky在pre-commit阶段做代码检查/" target="_blank" rel="noopener">https://dsb123dsb.github.io/2018/05/26/lint-staged和husky在pre-commit阶段做代码检查/</a></li>
+<li><a href="https://github.com/nodejh/nodejh.github.io/issues/45" target="_blank" rel="noopener">https://github.com/nodejh/nodejh.github.io/issues/45</a></li>
+<li><a href="https://juejin.im/post/5b27a326e51d45588a7dac57" target="_blank" rel="noopener">注意解析器</a></li>
+</ul>
 
       
 
@@ -273,11 +356,37 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">angular</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">lint</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/代码规范//" class="article-tag-list-link color5">代码规范</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/31/git/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/20/Keep/angular项目接入lint/">展开全文 >></a>
         </p>
       
 
@@ -307,75 +416,88 @@
 
 
   
-    <article id="post-css设计指南" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Keep/service重构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/16/Keep/service重构/">servicec重构</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/16/Keep/service重构/" class="archive-article-date">
+  	<time datetime="2019-08-15T16:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-16</time>
+</a>
+        
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>敏捷软件开发讲究快速迭代，持续交付。套用在敏捷出版上，就是译，编，读每章都会有迭代，而全书的内容都是以章为单位交付给读者。即每一次迭代是从交付每一章的内容开始。<br>H5是为今天的多媒体互联网而生，提供了一整套的API,支持视频，音频，定位，存储等，以及为结构化文档提供了新的元素(如header,side,article等)替换了无语义的div，使其在缺少样式的时候仍能够显示基本文档布局结构。  </p>
-<h2 id="chapter-1-HTML标记与文档结构"><a href="#chapter-1-HTML标记与文档结构" class="headerlink" title="chapter 1.HTML标记与文档结构"></a>chapter 1.HTML标记与文档结构</h2><p>HTML–&gt;标记内容，赋予网页用户代理(浏览器，屏幕阅读器，爬虫)能够理解的语义 </p>
-<p>块级元素会<strong>扩展到与父元素同宽</strong>；<br>行内元素会“收缩包裹”其内容，并且会<strong>尽可能包紧</strong>。</p>
-<p>html实体用于生成键盘上没有的<strong>实体字符</strong>–&gt;以&amp;开头，以;结尾。<br><a href="http://www.elizabethcastro.com/html/extras/entities.html" target="_blank" rel="noopener">常用html实体</a><br>DOM是从浏览器的视角来观察页面中的元素以及每个元素的属性，由此得到的家族树。 </p>
-<h2 id="chapter-2-CSS工作原理"><a href="#chapter-2-CSS工作原理" class="headerlink" title="chapter 2.CSS工作原理"></a>chapter 2.CSS工作原理</h2><p>css引入的4种方式  </p>
-<blockquote>
-<p>注：@import指令必须出现在样式表中其他样式之前，否则@import引用的样式表不会被加载  </p>
-</blockquote>
-<h3 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h3><p>css规则实际上是一个css指令，声明了要修改的元素及其应用的样式。css规则由选择符(指出规则所要选择的元素)和声明(属性和值)两部分组成<br><a href="http://www.w3school.com.cn/cssref/css_selectors.asp" target="_blank" rel="noopener">选择器参考手册</a><br>选择器的优先级：<br><strong>Important  &gt; 内联(行内) &gt; ID &gt;类 |伪类 |属性选择器 &gt;标签 &gt;通配符&gt; 继承</strong><br>相同的后面覆盖前面；显式指定覆盖继承的；  </p>
-<h4 id="1-上下文选择符"><a href="#1-上下文选择符" class="headerlink" title="1. 上下文选择符"></a>1. 上下文选择符</h4><blockquote>
-<p>注:上下文选择符以空格为分隔符，分组选择符以逗号作为分隔符。   </p>
-</blockquote>
-<p>通用选择符：<em><br>color属性设定的是前景色，既影响文本也影响边框。 –&gt; p </em> {color:red;}<br>使用通用选择符构成<strong>非子选择符</strong> –&gt; section * a{color:red;}  </p>
-<h4 id="2-ID和类选择符"><a href="#2-ID和类选择符" class="headerlink" title="2. ID和类选择符"></a>2. ID和类选择符</h4><p>优点：不用考虑文档的层次结构地选择元素  </p>
-<blockquote>
-<p>注：id和类名不能以数字和特殊符号开头<br><strong>标签带类选择符</strong>表示带某个类的某个标签–&gt;不需要加空格，否则是后代选择符  </p>
-</blockquote>
-<p>id也可以用于页内导航，形式如：<a href="#bio"></a>,注意加#,表示链接到当前页面，不会触发浏览器加载页面</p>
-<h4 id="3-属性选择符"><a href="#3-属性选择符" class="headerlink" title="3. 属性选择符"></a>3. 属性选择符</h4><p>属性名选择符 &amp; 属性值选择符  </p>
-<h3 id="伪类"><a href="#伪类" class="headerlink" title="伪类"></a>伪类</h3><h4 id="1-UI伪类"><a href="#1-UI伪类" class="headerlink" title="1. UI伪类"></a>1. UI伪类</h4><p>UI伪类会在HTML元素处于某个<strong>状态</strong>时为该元素添加CSS样式。<br>a. 链接伪类：<strong>LVHA</strong><br>b. e:focus –&gt; 表单元素聚焦时<br>c. e:target –&gt; 用户点击一个指向<strong>页面中其他元素</strong>的链接，这个元素就是e.target  </p>
-<h4 id="2-结构化伪类"><a href="#2-结构化伪类" class="headerlink" title="2. 结构化伪类"></a>2. 结构化伪类</h4><p>结构化伪类会在标签中存在某种<strong>结构上的关系</strong>时为相应的元素添加css样式。<br>如：:first-child,:last-child,:nth-child(n)  </p>
-<h3 id="伪元素"><a href="#伪元素" class="headerlink" title="伪元素"></a>伪元素</h3><p>文档中若有实无的元素。可以通过添加元素实现相同的效果。<br>如： ::first-letter,::first-line,::before,::after  </p>
-<blockquote>
-<p>注：first-line伪元素选中元素的第一行内容，长度会随浏览器窗口大小的变化而变化。  </p>
-</blockquote>
-<h3 id="css属性继承"><a href="#css属性继承" class="headerlink" title="css属性继承"></a>css属性继承</h3><p>可继承属性：颜色，字体，字号<br>不可继承属性：边框，外边距，内边距<br><a href="https://www.cnblogs.com/thislbq/p/5882105.html" target="_blank" rel="noopener">css属性可继承性</a><br>样式来源：行内样式 &gt; 嵌入样式 &gt; 链接样式 &gt; 用户样式表 &gt; 浏览器默认样式表<br>计算特指度：I-C-E分别表示id,class,etag得到一个三位数  </p>
-<blockquote>
-<p>注：显式指定的样式优先级高于继承的样式。  </p>
-</blockquote>
-<h3 id="规则声明"><a href="#规则声明" class="headerlink" title="规则声明"></a>规则声明</h3><p>属性值数字单位：<br>绝对单位：in(英寸),cm(厘米),mm(毫米),pt(点)，(pc)皮卡，px(像素)<br>相对单位：em,ex,rem,%<br>ex表示当前字体的x高度<br>HSL(色相，饱和度%,亮度%) 红色: 0或360， 绿色： 125， 蓝色：230<br>Alpha通道：0完全透明，1完全不透明  </p>
-<h2 id="chapter-3-定位元素"><a href="#chapter-3-定位元素" class="headerlink" title="chapter 3.定位元素"></a>chapter 3.定位元素</h2><h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>盒模型：浏览器为页面中的每一个HTML元素生成的矩形盒子。  </p>
-<blockquote>
-<p>注：border-width:thin,medium,thick等文本值以及border-style值的显示会因浏览器而异</p>
-</blockquote>
-<p>垂直外边距叠加，水平外边距不叠加。原因在于如果一连串的段落应用相同样式时的合理性。<br>一般，左右外边距使用像素为单位，以便段落文本始终与包含元素边界保持固定间距；上下边距以em为单位可以让段间距随字号变化而变化。，页面整体布局协调。  </p>
-<p>盒模型设置区别：<br>1.未显式定义宽度：width值为auto,继承父元素的宽度，设置border,padding,margin会使内容区宽度变窄,整体宽度不变；<br>2.显式定义宽度：width值为指定值，设置border,padding,margin会使元素整体宽度变宽，内容区不变。  </p>
-<h3 id="浮动与清除"><a href="#浮动与清除" class="headerlink" title="浮动与清除"></a>浮动与清除</h3><p>浮动：使元素脱离正常文档流。<br>用途：<strong>1.实现文字环绕图片的效果；2.使上下堆叠的元素变成左右并列</strong>。</p>
-<p>清除浮动的3种方法：<br><strong>1.父元素设置overflow:hidden</strong><br>overflow:hidden用途：防止包含元素被超大内容成大； 迫使父元素包含其浮动的子元素。<br>优点：简单；<br>缺点：不太直观，不适用于下拉菜单的顶级元素上应用。<br><strong>2.同时浮动父元素</strong>  </p>
-<blockquote>
-<p>注：浮动父元素后，会收缩包裹子元素，因此应该设置宽度为100%  </p>
-</blockquote>
-<p><strong>3.添加非浮动的清除元素</strong><br>原因在于：包含元素一定会包含非浮动的子元素，而清除会让子元素位于(清除一侧)浮动元素的下方，因此包含元素一定会包含这个子元素以及之前的浮动元素。<br>缺点：不能对使用自动外边距居中的元素使用？？？？<br><strong>a.空元素添加clear样式</strong><br>没有默认样式，不引入多余空间–&gt;div<br>缺点：添加的纯表现性元素，在文档结构中不存在实际语义<br><strong>b.clearfix规则</strong><br>浮动元素的父元素添加clearfix类，样式为<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">.clearfix::after&#123;</span><br><span class="line">	content:&quot;.&quot;,		//必须有内容，.是最小的内容  </span><br><span class="line">	display:block;</span><br><span class="line">	height:0;</span><br><span class="line">	visibility:hidden,	//确保伪元素没有高度，而且在页面上不可见</span><br><span class="line">	clear:both;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>前景(内容，边框，边距) + 背景(背景图片 + 背景色)</p>
-<p>background-repeat:repeat/repeat-x/repeat-y/no-repeat<br>background-position:同时设定元素和图片的原点<br>background-clip:content-box/padding-box/border-box背景绘制区域</p>
-<h2 id="chapter-4-字体和文本"><a href="#chapter-4-字体和文本" class="headerlink" title="chapter 4.字体和文本"></a>chapter 4.字体和文本</h2><h3 id="字体-文字的不同样式"><a href="#字体-文字的不同样式" class="headerlink" title="字体(文字的不同样式)"></a>字体(文字的不同样式)</h3><p><strong>font-family</strong>的值不区分大小写，值为多个单词时需要加双引号，可继承属性，使用<strong>字体栈</strong>指定，最后一项指定<strong>通用字体类</strong>，如serif,sans-serif,monospace,cursive,fantasy<br>Dreamweaver选择字体栈时的菜单有问题？？？？<br><strong>font-size</strong>:绝对单位&amp;相对单位(em,rem,%) 及其继承(相对单位继承后计算值)<br><strong>font-style</strong>:normal/italic/oblique<br>italic与oblique的区别：<br><strong>font-variant</strong>:normal/small-caps(小型大写字母：大小和小写字母一样，样式是大写字母)  </p>
-<p>font属性用于简写<br><strong>规则1: 必须声明font-size和font-family的值</strong><br><strong>规则2： 所有值必须按照如下顺序声明</strong><br>        1.font-weight,font-style,font-variant不分先后<br>        2.然后是font-size<br>        3.最后是font-family  </p>
-<h3 id="文本-一组字或字符"><a href="#文本-一组字或字符" class="headerlink" title="文本(一组字或字符)"></a>文本(一组字或字符)</h3><p>text-indent设定行内盒子相对于包含元素的起点，可继承属性，当出现折行时，由于文本的蛇形排列而断开，在CSS看来仍是一个整体，因此只会缩进第一行；缩进整个段落使用margin-left。缩进值一般使用相对单位。<br>letter-spacing:其值表示的是在浏览器默认值的基础上增加或减少的值<br>word-spacing：对中文网页几乎没有用<br>text-decoration:<br>text-align:<br>line-height:行高平均分布在一行文本地上方和下方<br>text-transform:none,uppercase,lowercase,capitalize<br>vertical-align：以基线为参照上下移动文本，<strong>只影响行内元素</strong>sub/super/top/middle/bottom/+-自定义值</p>
-<h3 id="未读"><a href="#未读" class="headerlink" title="未读"></a>未读</h3><h2 id="chapter-5-页面布局"><a href="#chapter-5-页面布局" class="headerlink" title="chapter 5.页面布局"></a>chapter 5.页面布局</h2><h3 id="三栏布局"><a href="#三栏布局" class="headerlink" title="三栏布局"></a>三栏布局</h3><h4 id="1-固定宽度-浮动"><a href="#1-固定宽度-浮动" class="headerlink" title="1.固定宽度+浮动"></a>1.固定宽度+浮动</h4><h4 id="浮动滑移问题："><a href="#浮动滑移问题：" class="headerlink" title="浮动滑移问题："></a>浮动滑移问题：</h4><p>产生原因：1.添加内外边距，边框；2.栏中内容添加大图片，长url等<br>a.重设宽度以抵消内外边距和边框<br>b.给容器内部的元素应用内边距和边框<br>(为栏添加不显式指定宽度的表现型子标签/子-星选择符)  </p>
-<blockquote>
-<p>注：1.在为子元素设置垂直外边距时，只能使用margin-top,margin-bottom不能使用margin简写，否则会抵消用”子星选择符”应用给这些元素的水平外边距。<br>2.潜在性能问题，会遍历整个DOM结构查找匹配的元素。  </p>
-</blockquote>
-<p>c.设置box-sizing为怪异盒模型(border-box)</p>
-<blockquote>
-<p>注：IE6,7不支持box-sizing属性，使用条件注释添加borderBoxModel.js的腻子脚本(polyfill)<br>html之后，body结束标签之前，以保证在加载dom之后再执行该脚本。  </p>
-</blockquote>
-<h4 id="预防过大元素"><a href="#预防过大元素" class="headerlink" title="预防过大元素"></a>预防过大元素</h4><p>a.添加max-width:100%的声明；<br>b.添加overflow:hidden；<br>c.word-wrap:break-word声明；    </p>
-<h4 id="2-父外边距定位右栏"><a href="#2-父外边距定位右栏" class="headerlink" title="2.父外边距定位右栏"></a>2.父外边距定位右栏</h4><p>人造栏技术：  </p>
-<h4 id="3-display-table-cell"><a href="#3-display-table-cell" class="headerlink" title="3.display:table-cell"></a>3.display:table-cell</h4><p>优点：简单直接，每个单元格等高，定宽设置宽度，自适应时不设置宽度<br>缺点：IE7及以下版本不支持<br>浏览器的渲染引擎在碰到没有tr的单元格时会自动添加表行，表行没有被table/包围时会自动添加table.  </p>
-<h2 id="chapter-6-界面组件"><a href="#chapter-6-界面组件" class="headerlink" title="chapter 6.界面组件"></a>chapter 6.界面组件</h2><h3 id="1-非首位子选择符"><a href="#1-非首位子选择符" class="headerlink" title="1.非首位子选择符"></a>1.非首位子选择符</h3><p>a.li + li {}<br>b.先设置所有，再设置首位none  </p>
-<h3 id="导航菜单"><a href="#导航菜单" class="headerlink" title="导航菜单"></a>导航菜单</h3><p>1.设置a标签的display属性为block;  </p>
-<blockquote>
-<p>注：1.在适当的场景下使用nav,section,article等语义化标签</p>
-</blockquote>
-<h2 id="chapter-7-css实战"><a href="#chapter-7-css实战" class="headerlink" title="chapter 7.css实战"></a>chapter 7.css实战</h2><h2 id="chapter-8-响应式设计"><a href="#chapter-8-响应式设计" class="headerlink" title="chapter 8.响应式设计"></a>chapter 8.响应式设计</h2>
+        <h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>当前angular项目的service层http请求中大量重复代码，但其实只是method,url,params不同。有重复的代码一定是可以优化可以重构的。</p>
+<h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><p><strong>类与继承</strong><br>建立httpBase.service.ts文件，其他每个模块的service继承该类。</p>
+<ul>
+<li>父</li>
+<li><p> import { HttpClient, HttpParams } from ‘@angular/common/http’<br> export class HttpBaseService {<br>   static http: any<br>   constructor(protected http: HttpClient) {</p>
+<pre><code>HttpBaseService.http = http
+</code></pre><p>   }</p>
+<p>   get(url, params?) {</p>
+<pre><code>const result = HttpBaseService.handleGet(url, params)
+return result
+  .toPromise()
+  .then(res =&gt; res)
+  .catch(HttpBaseService.handleError)
+</code></pre><p>   }</p>
+<p>   post(url, params?) {</p>
+<pre><code>const result = HttpBaseService.http.post(url, params)
+return result
+  .toPromise()
+  .then(res =&gt; res)
+  .catch(HttpBaseService.handleError)
+</code></pre><p>   }</p>
+<p>   delete(url, params?) {</p>
+<pre><code>const result = HttpBaseService.http.delete(url, params)
+return result
+  .toPromise()
+  .then(res =&gt; res)
+  .catch(HttpBaseService.handleError)
+</code></pre><p>   }</p>
+<p>   static handleGet(url, params?) {</p>
+<pre><code>let data = new HttpParams()
+if (params) {
+  Object.keys(params).forEach(key =&gt; {
+    if (params[key] || params[key] === 0 || params[key] === false) {
+      data = data.append(key, params[key] + &apos;&apos;)
+    }
+  })
+}
+return params ? HttpBaseService.http.get(url, { params: data }) : HttpBaseService.http.get(url)
+</code></pre><p>   }</p>
+<p> // 一开始的错误处理：Promise.reject(‘Server error’)导致一旦接口403或其他reject返回的Promise一直pending,导致项目无法登录，之后改为return string。<br>   static handleError(error: any) {</p>
+<pre><code>if (error.status === 500 || error.status === 502) {
+  return &apos;Server error&apos;
+} else if (error.status === 504) {
+  return &apos;请求超时&apos;
+} else if (error.error) {
+  return error.error.text || error.error.error
+}
+</code></pre><p>   }</p>
+<p> }</p>
+</li>
+<li><p>子</p>
+</li>
+<li>  export class LabelService extends httpBaseService {<pre><code>constructor(http: HttpClient) {
+  super(http)
+  // 其他操作
+}
+</code></pre>  }</li>
+</ul>
+<h2 id="Ques"><a href="#Ques" class="headerlink" title="Ques"></a>Ques</h2><ul>
+<li>其实是不希望http作为参数进行传递，但angular的依赖注入使得这种实现有局限性。</li>
+</ul>
+
       
 
       
@@ -383,11 +505,33 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">重构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/angular//" class="article-tag-list-link color3">angular</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/10/05/css设计指南/">展开全文 >></a>
+          <a class="article-more-a" href="/2019/08/16/Keep/service重构/">展开全文 >></a>
         </p>
       
 
@@ -679,6 +823,22 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">array</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">angular</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">lint</a>
               </li>
             
             <div class="clearfix"></div>
