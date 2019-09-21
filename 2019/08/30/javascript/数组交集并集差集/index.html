@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>js求数组交集并集差集 | ScarlettLiu`s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="业务场景根据用户选择内容(array)与接口返回内容(string)做比较,使用array.includes(string)即可。后端根据业务场景修改返回数据类型为array。本质是数组取交集 解决方案 arr1.filter(item =&amp;gt; arr2.includes(item))  扩展 数组取并集  arr1.concat(arr2.filter(item =&amp;gt; !arr1.in">
+  <meta name="description" content="业务场景根据用户选择内容(array)与接口返回内容(string)做比较,使用array.includes(string)即可。后端根据业务场景修改返回数据类型为array。本质是数组取交集 解决方案 arr1.filter(item =&amp;gt; arr2.includes(item))">
 <meta name="keywords" content="javascript,array">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js求数组交集并集差集">
 <meta property="og:url" content="http://yoursite.com/2019/08/30/javascript/数组交集并集差集/index.html">
 <meta property="og:site_name" content="ScarlettLiu`s Blog">
-<meta property="og:description" content="业务场景根据用户选择内容(array)与接口返回内容(string)做比较,使用array.includes(string)即可。后端根据业务场景修改返回数据类型为array。本质是数组取交集 解决方案 arr1.filter(item =&amp;gt; arr2.includes(item))  扩展 数组取并集  arr1.concat(arr2.filter(item =&amp;gt; !arr1.in">
+<meta property="og:description" content="业务场景根据用户选择内容(array)与接口返回内容(string)做比较,使用array.includes(string)即可。后端根据业务场景修改返回数据类型为array。本质是数组取交集 解决方案 arr1.filter(item =&amp;gt; arr2.includes(item))">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-09-21T15:08:41.094Z">
+<meta property="og:updated_time" content="2019-09-21T15:19:58.844Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js求数组交集并集差集">
-<meta name="twitter:description" content="业务场景根据用户选择内容(array)与接口返回内容(string)做比较,使用array.includes(string)即可。后端根据业务场景修改返回数据类型为array。本质是数组取交集 解决方案 arr1.filter(item =&amp;gt; arr2.includes(item))  扩展 数组取并集  arr1.concat(arr2.filter(item =&amp;gt; !arr1.in">
+<meta name="twitter:description" content="业务场景根据用户选择内容(array)与接口返回内容(string)做比较,使用array.includes(string)即可。后端根据业务场景修改返回数据类型为array。本质是数组取交集 解决方案 arr1.filter(item =&amp;gt; arr2.includes(item))">
   
     <link rel="alternative" href="/atom.xml" title="ScarlettLiu`s Blog" type="application/atom+xml">
   
@@ -161,6 +161,7 @@
 <h2 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h2><ul>
 <li><code>arr1.filter(item =&gt; arr2.includes(item))</code></li>
 </ul>
+<a id="more"></a>
 <h2 id="扩展"><a href="#扩展" class="headerlink" title="扩展"></a>扩展</h2><ul>
 <li>数组取并集<br>  <code>arr1.concat(arr2.filter(item =&gt; !arr1.includes(item) ))</code></li>
 <li>数组取差集<br>  <code>arr1.concat(arr2).filter(item=&gt; !(arr1.includes(item) &amp;&amp; arr2.includes(item))</code></li>
@@ -401,15 +402,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">重构</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">javascript</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">异步</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">重构</a>
               </li>
              
               <li class="article-tag-list-item">
